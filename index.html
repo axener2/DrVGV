@@ -66,40 +66,38 @@
 
 
 
-<style id="v6-1-header-80-fixed">
-@media (max-width: 720px){
-  header.site-header{ padding-top: env(safe-area-inset-top) !important; }
-  header.site-header .container{
-    position:relative !important;
-    display:flex !important; align-items:center !important; justify-content:space-between !important;
-    height:80px !important; min-height:80px !important;
-    padding:12px 16px !important; gap:14px !important; z-index: 4000 !important;
-  }
 
-  /* Brand row: avatar + (name + subtitle) block, centered vertically */
-  header.site-header .brand{
-    display:flex !important; flex-direction:row !important; align-items:center !important; gap:12px !important;
+
+
+<style id="v6-2-header-100">
+/* Phone: 100px header, centered text, header hamburger only */
+@media (max-width: 720px){
+  header.site-header{ position:relative !important; padding-top: env(safe-area-inset-top) !important; }
+  header.site-header .container{
+    display:flex !important; align-items:center !important; justify-content:space-between !important;
+    height:100px !important; min-height:100px !important; padding:12px 16px !important; gap:14px !important;
   }
+  header.site-header .brand{ display:flex !important; align-items:center !important; gap:12px !important; }
   header.site-header .brand h1{ margin:0 !important; line-height:1.1 !important; }
-  /* keep original subtitle size; only normalize margins/line-height */
   header.site-header .brand .subtitle{ margin:2px 0 0 0 !important; line-height:1.25 !important; }
 
-  /* Hamburger aligned with brand */
+  /* Force the correct hamburger (in header) and hide any card/hero hamburgers */
   header.site-header .menu-toggle{
     position:static !important; transform:none !important;
     display:flex !important; align-items:center !important; justify-content:center !important;
     width:48px !important; height:48px !important; background:transparent !important; border:0 !important;
-    margin-left:auto !important; cursor:pointer !important; z-index: 4100 !important;
+    margin-left:auto !important; cursor:pointer !important; z-index:4100 !important;
   }
   header.site-header .menu-toggle span{ width:24px !important; height:3px !important; border-radius:2px !important; background:var(--ink) !important; display:block }
-  header.site-header .menu-toggle span + span{ margin-top:6px !important }
+  header.site-header .menu-toggle span + span{ margin-top:6px !important; }
+  .hero .menu-toggle, .profile-card .menu-toggle{ display:none !important; }
 
-  /* Dropdown placed under the bar */
+  /* Dropdown immediately below header */
   #site-nav{
     position:absolute !important; left:16px !important; right:16px !important; top: calc(100% + 8px) !important;
     display:none !important; background:rgba(11,16,32,.98) !important; padding:14px !important;
     border-radius:14px !important; border:1px solid rgba(255,255,255,.10) !important;
-    box-shadow:0 12px 30px rgba(0,0,0,.25) !important; z-index: 3500 !important;
+    box-shadow:0 12px 30px rgba(0,0,0,.25) !important; z-index:3500 !important;
   }
   #site-nav.open{ display:block !important; }
 }
@@ -126,6 +124,8 @@
       <a href="#contact">Contact</a>
     </nav>
   </div>
+
+<button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
 </header>
 
 
@@ -320,6 +320,19 @@
   btn.addEventListener('click', (e)=>{ e.preventDefault(); e.stopPropagation(); set(!nav.classList.contains('open')); }, {passive:false});
   document.addEventListener('click', (e)=>{ if(!nav.contains(e.target) && !btn.contains(e.target)) set(false); });
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') set(false); });
+})();
+</script>
+
+
+<script id="v6-2-toggle">
+(function(){
+  var btn = document.querySelector('header.site-header .menu-toggle');
+  var nav = document.getElementById('site-nav');
+  if(!btn || !nav) return;
+  function set(open){ nav.classList.toggle('open', open); btn.setAttribute('aria-expanded', open?'true':'false'); }
+  btn.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); set(!nav.classList.contains('open')); }, {passive:false});
+  document.addEventListener('click', function(e){ if(!nav.contains(e.target) && !btn.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
 })();
 </script>
 
