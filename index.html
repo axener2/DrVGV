@@ -81,34 +81,61 @@
 
 
 
-<style id="v8-2-mobile-header-60">
+
+
+
+<style id="v8-3-white-pills-72px">
+/* Shared nav pill style (desktop + mobile) */
+.nav a, .nav-links a, header.site-header .mobile-nav a {
+  display:inline-block; text-decoration:none !important;
+  color:#F4F7FF !important;
+  border:1px solid rgba(255,255,255,.28) !important;
+  background:rgba(255,255,255,.05) !important;
+  padding:8px 12px; border-radius:10px;
+  line-height:1; font-size:14px;
+  transition:background .2s ease, border-color .2s ease, color .2s ease;
+}
+.nav a:hover, .nav-links a:hover, header.site-header .mobile-nav a:hover {
+  background:rgba(255,255,255,.10) !important;
+  border-color:rgba(255,255,255,.45) !important;
+  color:#FFFFFF !important;
+}
+.nav a:visited, .nav-links a:visited, header.site-header .mobile-nav a:visited { color:#F4F7FF !important; }
+
+/* Keep gradient header background (in case theme doesn't already include it) */
+header.site-header{
+  background: linear-gradient(180deg, rgba(13,17,23,0.95) 0%, rgba(13,17,23,0.86) 65%, rgba(13,17,23,0.00) 100%) !important;
+}
+
+/* Mobile adjustments */
 @media (max-width: 720px){
-  /* Smaller header bar */
+  /* Header bar ~20% taller than 60px -> 72px */
   header.site-header .container{
-    height:60px !important; min-height:60px !important;
-    padding:8px 12px !important; gap:10px !important;
+    height:72px !important; min-height:72px !important;
+    padding:10px 14px !important; gap:10px !important;
   }
-  /* Brand row: shrink avatar, keep name centered vertically */
-  header.site-header .brand{ display:flex !important; align-items:center !important; gap:10px !important; }
+  /* Slightly larger avatar for balance */
   header.site-header .brand .avatar, header.site-header .brand .logo, header.site-header .brand .initial-badge{
-    width:40px !important; height:40px !important; min-width:40px !important; min-height:40px !important;
-    border-radius:10px !important; font-size:14px !important; line-height:40px !important; text-align:center;
+    width:44px !important; height:44px !important; min-width:44px !important; min-height:44px !important;
+    border-radius:10px !important; line-height:44px !important; font-size:15px !important; text-align:center;
   }
   header.site-header .brand h1{ margin:0 !important; line-height:1.1 !important; font-size:22px !important; }
   header.site-header .brand .subtitle{ display:none !important; }
-  /* Compact chips row preserved, with tighter spacing */
+  /* Compact mobile pill row */
   header.site-header .mobile-nav{
-    display:flex !important; gap:8px !important; padding:6px 12px 8px 12px !important;
+    display:flex !important; gap:10px !important; padding:8px 14px 10px 14px !important;
     overflow-x:auto; white-space:nowrap; scrollbar-width:none; -ms-overflow-style:none;
-    background:linear-gradient(180deg, rgba(10,14,28,.45), rgba(10,14,28,0));
     border-top:1px solid rgba(255,255,255,.06);
+    background:linear-gradient(180deg, rgba(10,14,28,.45), rgba(10,14,28,0));
   }
   header.site-header .mobile-nav::-webkit-scrollbar{ display:none; }
-  header.site-header .mobile-nav a{ font-size:13px !important; padding:6px 10px !important; border-radius:999px; }
-  .hero{ padding-top:6px !important; }
+  /* Tighten space before hero */
+  .hero{ padding-top:8px !important; }
 }
+
+/* Desktop: ensure classic top nav uses pill style too (if present) */
 @media (min-width: 721px){
-  header.site-header .mobile-nav{ display:none !important; }
+  #site-nav.nav, .top-nav, .nav-links{ display:flex; gap:10px; align-items:center; }
 }
 </style>
 
