@@ -392,3 +392,21 @@ body{line-height:1.7}
   .avatar-img{width:84px; height:84px}
   .hero-head{grid-template-columns:84px 1fr}
 }
+
+
+/* === Cross-browser header/nav fix (Chrome/Safari/Firefox) === */
+.site-header .container{
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:nowrap;
+}
+.brand{display:flex; gap:12px; align-items:center; flex:0 1 auto; min-width:0}
+.nav{
+  display:flex; align-items:center; justify-content:flex-end;
+  gap:18px; flex:1 1 auto; min-width:0; white-space:nowrap; flex-wrap:nowrap;
+}
+.nav a{flex:0 0 auto}
+
+/* Wrap the nav to its own row only on mid widths */
+@media (max-width: 1100px){
+  .site-header .container{flex-wrap:wrap}
+  .nav{order:2; width:100%; justify-content:flex-start; flex-wrap:wrap; white-space:normal; gap:10px 18px; padding-top:6px}
+}
