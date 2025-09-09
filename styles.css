@@ -190,3 +190,58 @@ html{scroll-padding-top:80px}
 /* Prevent sections from sliding under the sticky header */
 section{scroll-margin-top: 86px;}
 [id]{scroll-margin-top: 86px;}
+
+
+/* --- Mobile polish --- */
+@media (max-width: 640px){
+  .site-header .container{flex-wrap:wrap; padding:10px 0}
+  .brand h1{font-size:1.35rem}
+  .subtitle{font-size:.9rem}
+  .nav{width:100%; overflow-x:auto; white-space:nowrap; padding:8px 0 4px}
+  .nav a{display:inline-block; margin:0 14px 0 0; font-weight:700}
+  .hero{padding:36px 0}
+  .hero .container{grid-template-columns: 1fr; gap:16px}
+  .hero h2{font-size:1.7rem; line-height:1.25}
+  .hero p{font-size:1rem}
+  .hero-card{padding:14px}
+  .hero-head{grid-template-columns:56px 1fr}
+  .avatar-img{width:56px; height:56px}
+  .item{padding:14px; grid-template-columns:1fr}
+  .section{padding:36px 0}
+  section{scroll-margin-top: 78px;}
+  [id]{scroll-margin-top: 78px;}
+}
+
+
+/* --- Header/menu polish for desktop & mid-widths --- */
+.site-header .container{flex-wrap:nowrap}
+
+@media (max-width: 1100px){
+  .nav{overflow-x:auto; white-space:nowrap; -webkit-overflow-scrolling: touch; padding-bottom:4px}
+  .nav a{margin:0 14px 0 0; font-size:.98rem}
+}
+
+
+/* --- Strong fix: keep nav in one row and align right --- */
+.site-header .container{
+  display:flex; align-items:center; justify-content:space-between; column-gap:16px;
+}
+.nav{
+  flex:1 1 auto; display:flex; justify-content:flex-end; align-items:center;
+  gap:18px; flex-wrap:nowrap; overflow-x:auto; white-space:nowrap; scrollbar-width:none;
+}
+@media (max-width: 1280px){
+  .nav a{font-size:.95rem}
+  .brand h1{font-size:1.55rem}
+}
+
+
+/* --- Nav visibility baseline --- */
+.nav{flex-wrap:nowrap; overflow:visible; white-space:normal}
+
+
+@media (max-width: 1200px){
+  .site-header .container{flex-wrap:wrap}
+  .nav{width:100%; justify-content:flex-start; gap:14px 18px; flex-wrap:wrap; overflow:visible; white-space:normal; padding-top:6px}
+  .nav a{margin:0; display:inline-block}
+}
