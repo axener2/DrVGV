@@ -139,6 +139,27 @@ header.site-header{
 }
 </style>
 
+
+<style id="v8-4-clickable-fix">
+/* Make sure nothing blocks taps on mobile nav */
+@media (max-width: 720px){
+  header.site-header{ position:relative; z-index:3000; }
+  header.site-header .mobile-nav{
+    position:relative; z-index:3050;
+    pointer-events:auto;
+  }
+  /* If any overlay/pseudo sits on header, disable pointer-events on it */
+  header.site-header::before, header.site-header::after{ pointer-events:none !important; }
+  /* Provide anchor offset to account for sticky header (72px) */
+  .anchor-spacer{
+    display:block; position:relative; top:-84px; /* header 72 + small gap */
+    height:0; width:0; visibility:hidden;
+  }
+}
+/* Make anchors scroll smooth on all */
+html{ scroll-behavior:smooth; }
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -371,6 +392,30 @@ header.site-header{
 
 
 
+
+
+<script id="v8-4-scroll-fix">
+(function(){
+  function headerOffset(){ return 84; } // px
+  function scrollToId(id){
+    var el = document.getElementById(id);
+    if(!el){ return; }
+    var y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset();
+    window.scrollTo({top: y, behavior: 'smooth'});
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    var id = a.getAttribute('href').slice(1);
+    if(!id) return;
+    var target = document.getElementById(id);
+    if(target){
+      e.preventDefault();
+      scrollToId(id);
+    }
+  }, {passive:false});
+})();
+</script>
 
 </body>
 </html>
