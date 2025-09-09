@@ -2,27 +2,14 @@
 })();
 
 
-// Mobile menu toggle (robust)
+// === Mobile menu toggle ===
 (function(){
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.getElementById('site-nav');
   if (toggle && nav){
-    toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-  }
-})();
-
-
-// Ensure mobile menu toggle works
-(function(){
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.getElementById('site-nav');
-  if (toggle && nav){
-    toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.addEventListener('click', function(){
+      const open = nav.classList.toggle('open');
+      this.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
 })();
