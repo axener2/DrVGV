@@ -354,3 +354,44 @@ body{line-height:1.7}
     background:linear-gradient(180deg, rgba(11,16,32,0), rgba(11,16,32,1));
   }
 }
+
+
+/* --- Cleaner mobile presentation --- */
+@media (max-width: 720px){
+  /* Use line-clamp (no dark overlay) */
+  .compact-truncated{
+    display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+
+  /* Lighter 'Read more' link style */
+  .toggle-btn{background:transparent; border:0; padding:8px 0; color:var(--ink); opacity:.85}
+  .toggle-btn:hover{opacity:1; text-decoration:underline}
+
+  /* Buttons smaller & simpler */
+  .btn{padding:11px 14px; border-radius:12px; font-weight:800}
+  .btn.secondary{display:none} /* hide secondary CTA in hero on phones */
+
+  /* Spacing tweaks */
+  .hero{padding:22px 0 12px}
+  .hero h2{font-size:1.45rem; margin-bottom:6px}
+  .hero p{font-size:.98rem}
+  .hero-card{padding:12px; border-radius:14px}
+  .hero-head{margin-bottom:6px}
+  .item{padding:12px; border-radius:12px}
+  .section{padding:26px 0}
+}
+
+
+/* --- Trimmed mobile hero: show only the info card --- */
+@media (max-width: 720px){
+  .hero .container{grid-template-columns:1fr}
+  .hero-text{display:none !important}
+  .hero-card{margin-top:8px}
+}
+
+
+@media (max-width: 720px){
+  .avatar-img{width:84px; height:84px}
+  .hero-head{grid-template-columns:84px 1fr}
+}
