@@ -83,26 +83,24 @@
   /* Tighten space above header; respect iPhone safe area */
   .site-header{ padding-top: max(8px, env(safe-area-inset-top)) !important }
 
-/* ===== Visual polish: extra breathing room + soft gradient under header ===== */
-.site-header .container{ min-height: 72px; position: relative; }
-.hero::before{
+/* ===== Visual polish: extra space above header with gradient ===== */
+body::before{
   content:"";
   display:block;
-  height:18px;
+  height:16px;
   background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.00) 100%);
-  border-radius: 0 0 12px 12px;
-  margin-bottom: 6px;
 }
-@media (max-width: 720px){
-  .hero::before{ height:16px; margin-bottom: 8px; }
-}
+.site-header{ margin-top: 4px; }
 
-/* Align hamburger vertically with the brand line */
+/* Align hamburger with the brand line */
 @media (max-width: 720px){
+  .site-header .container{ display:flex; align-items:center; justify-content:space-between; }
   .menu-toggle{
-    top: 50% !important;
-    transform: translateY(-50%);
-    right: 12px;
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    margin-left: auto;
+    right: 0;
   }
 }
 
