@@ -140,23 +140,44 @@ header.site-header{
 </style>
 
 
-<style id="v8-4-clickable-fix">
-/* Make sure nothing blocks taps on mobile nav */
+
+
+
+<style id="v8-5-smaller-pills">
+/* Smaller pill nav style */
+.nav a, .nav-links a, header.site-header .mobile-nav a {
+  display:inline-block; text-decoration:none !important;
+  color:#F4F7FF !important;
+  border:1px solid rgba(255,255,255,.28) !important;
+  background:rgba(255,255,255,.05) !important;
+  padding:5px 10px; /* smaller padding */
+  border-radius:8px; /* slimmer corners */
+  line-height:1; font-size:13px; /* smaller font */
+  transition:background .2s ease, border-color .2s ease, color .2s ease;
+}
+.nav a:hover, .nav-links a:hover, header.site-header .mobile-nav a:hover {
+  background:rgba(255,255,255,.10) !important;
+  border-color:rgba(255,255,255,.45) !important;
+  color:#FFFFFF !important;
+}
+.nav a:visited, .nav-links a:visited, header.site-header .mobile-nav a:visited { color:#F4F7FF !important; }
+
+/* Ensure clickable + z-index fix */
 @media (max-width: 720px){
   header.site-header{ position:relative; z-index:3000; }
   header.site-header .mobile-nav{
     position:relative; z-index:3050;
     pointer-events:auto;
+    display:flex !important; gap:8px !important;
+    padding:6px 10px 8px 10px !important;
+    overflow-x:auto; white-space:nowrap; scrollbar-width:none; -ms-overflow-style:none;
+    border-top:1px solid rgba(255,255,255,.06);
+    background:linear-gradient(180deg, rgba(10,14,28,.45), rgba(10,14,28,0));
   }
-  /* If any overlay/pseudo sits on header, disable pointer-events on it */
-  header.site-header::before, header.site-header::after{ pointer-events:none !important; }
-  /* Provide anchor offset to account for sticky header (72px) */
-  .anchor-spacer{
-    display:block; position:relative; top:-84px; /* header 72 + small gap */
-    height:0; width:0; visibility:hidden;
-  }
+  header.site-header .mobile-nav::-webkit-scrollbar{ display:none; }
+  /* Provide anchor offset to account for sticky header */
+  .anchor-spacer{ display:block; position:relative; top:-84px; height:0; visibility:hidden; }
 }
-/* Make anchors scroll smooth on all */
 html{ scroll-behavior:smooth; }
 </style>
 
