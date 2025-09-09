@@ -82,6 +82,30 @@
 
   /* Tighten space above header; respect iPhone safe area */
   .site-header{ padding-top: max(8px, env(safe-area-inset-top)) !important }
+
+/* ===== Visual polish: extra breathing room + soft gradient under header ===== */
+.site-header .container{ min-height: 72px; position: relative; }
+.hero::before{
+  content:"";
+  display:block;
+  height:18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.00) 100%);
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 6px;
+}
+@media (max-width: 720px){
+  .hero::before{ height:16px; margin-bottom: 8px; }
+}
+
+/* Align hamburger vertically with the brand line */
+@media (max-width: 720px){
+  .menu-toggle{
+    top: 50% !important;
+    transform: translateY(-50%);
+    right: 12px;
+  }
+}
+
 </style>
 
 </head>
