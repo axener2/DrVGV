@@ -44,6 +44,46 @@
   }
 }
   </script>
+
+<style id="hotfix-mobile-menu">
+  /* Bigger hamburger + working dropdown (phones only) */
+  @media (max-width: 720px){
+    .menu-toggle{
+      display:flex !important; align-items:center; justify-content:center;
+      position:absolute; right:12px; top:10px;
+      width:64px; height:64px; border-radius:14px;
+      background:transparent !important; border:0 !important; box-shadow:none !important;
+      -webkit-tap-highlight-color: transparent; cursor:pointer; z-index:3000;
+    }
+    .menu-toggle span{ display:block; width:30px; height:4px; background:var(--ink); border-radius:3px }
+    .menu-toggle span + span{ margin-top:7px }
+
+    /* Drop-down menu */
+    #site-nav{
+      display:none !important;
+      position:absolute; left:12px; right:12px; top:72px;
+      background:rgba(11,16,32,.98);
+      padding:14px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 10px 30px rgba(0,0,0,.25); z-index:2500;
+    }
+    #site-nav.open{ display:block !important; }
+  }
+  @media (min-width:721px){ .menu-toggle{ display:none !important } }
+
+  /* Phone/email color — no more browser blue */
+  a[href^="mailto:"], a[href^="mailto:"]:visited,
+  a[href^="tel:"],    a[href^="tel:"]:visited{
+    color: var(--ink) !important;
+    text-decoration: none !important;
+    font-weight: 700;
+  }
+  a[href^="mailto:"]:hover, a[href^="tel:"]:hover{ text-decoration: underline !important }
+
+  /* Tighten space above header; respect iPhone safe area */
+  .site-header{ padding-top: max(8px, env(safe-area-inset-top)) !important }
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -210,5 +250,19 @@
 
 <script src="script.js?v={% raw %}{{ site.github.build_revision | slice: 0,7 }}{% endraw %}"></script>
 <div id="nav-backdrop" class="backdrop" hidden></div>
+
+<script>
+  (function(){
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('site-nav');
+    if (toggle && nav){
+      toggle.addEventListener('click', function(){
+        const open = nav.classList.toggle('open');
+        this.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>
