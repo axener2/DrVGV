@@ -45,277 +45,47 @@
 }
   </script>
 
-<style id="hotfix-mobile-menu">
-  /* Bigger hamburger + working dropdown (phones only) */
-  @media (max-width: 720px){
-    .menu-toggle{
-      display:flex !important; align-items:center; justify-content:center;
-      position:absolute; right:12px; top:10px;
-      width:64px; height:64px; border-radius:14px;
-      background:transparent !important; border:0 !important; box-shadow:none !important;
-      -webkit-tap-highlight-color: transparent; cursor:pointer; z-index:3000;
-    }
-    .menu-toggle span{ display:block; width:30px; height:4px; background:var(--ink); border-radius:3px }
-    .menu-toggle span + span{ margin-top:7px }
 
-    /* Drop-down menu */
-    #site-nav{
-      display:none !important;
-      position:absolute; left:12px; right:12px; top:72px;
-      background:rgba(11,16,32,.98);
-      padding:14px; border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:0 10px 30px rgba(0,0,0,.25); z-index:2500;
-    }
-    #site-nav.open{ display:block !important; }
-  }
-  @media (min-width:721px){ .menu-toggle{ display:none !important } }
 
-  /* Phone/email color — no more browser blue */
-  a[href^="mailto:"], a[href^="mailto:"]:visited,
-  a[href^="tel:"],    a[href^="tel:"]:visited{
-    color: var(--ink) !important;
-    text-decoration: none !important;
-    font-weight: 700;
-  }
-  a[href^="mailto:"]:hover, a[href^="tel:"]:hover{ text-decoration: underline !important }
 
-  /* Tighten space above header; respect iPhone safe area */
-  .site-header{ padding-top: max(8px, env(safe-area-inset-top)) !important }
 
-/* ===== Visual polish: extra space above header with gradient ===== */
-body::before{
-  content:"";
-  display:block;
-  height:16px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.00) 100%);
-}
-.site-header{ margin-top: 4px; }
 
-/* Align hamburger with the brand line */
+
+
+
+
+
+
+
+<style id="v5-header-60">
+/* Mobile header: ~60% height (40px) & vertically centered text + aligned hamburger */
 @media (max-width: 720px){
-  .site-header .container{ display:flex; align-items:center; justify-content:space-between; }
-  .menu-toggle{
-    position: relative !important;
-    top: auto !important;
-    transform: none !important;
-    margin-left: auto;
-    right: 0;
-  }
-}
-
-
-/* ===== Final polish: light-to-transparent glow ABOVE header, compact bar, aligned hamburger ===== */
-body::before{
-  content:""; display:block; height:8px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.00) 100%);
-}
-.site-header{ margin-top:0 !important; padding-top: env(safe-area-inset-top); }
-.site-header .container{ display:flex; align-items:center; justify-content:space-between; position:relative; }
-@media (max-width:720px){
-  .menu-toggle{
-    position: static !important; /* inline with brand */
-    width:64px; height:64px; border-radius:14px;
-    display:flex !important; align-items:center; justify-content:center;
-    background:transparent !important; border:0 !important; box-shadow:none !important;
-    margin-left:auto;
-  }
-  .menu-toggle span{ width:30px; height:4px; background:var(--ink); border-radius:3px }
-  .menu-toggle span + span{ margin-top:7px; }
-  /* dropdown just below header container */
-  #site-nav{
-    position:absolute; left:12px; right:12px; top: calc(100% + 8px);
-    display:none !important;
-    background:rgba(11,16,32,.98);
-    padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,.10);
-    box-shadow: 0 10px 30px rgba(0,0,0,.25); z-index:2500;
-  }
-  #site-nav.open{ display:block !important; }
-}
-@media (min-width:721px){
-  .menu-toggle{ display:none !important; }
-}
-
-
-/* ===== Compact header + aligned hamburger (final) ===== */
-body::before{
-  content:""; display:block; height:6px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.00) 100%);
-}
-.site-header{ margin-top:0 !important; padding-top: env(safe-area-inset-top); }
-.site-header .container{ display:flex; align-items:center; justify-content:space-between; min-height:48px; position:relative; }
-
-@media (max-width:720px){
-  .menu-toggle{
-    display:flex !important; align-items:center; justify-content:center;
-    position: static !important; margin-left:auto;
-    width:40px; height:40px; border-radius:10px;
-    background:transparent !important; border:0 !important; box-shadow:none !important;
-    -webkit-tap-highlight-color: transparent; cursor:pointer; z-index:3000;
-  }
-  .menu-toggle span{ display:block; width:22px; height:3px; background:var(--ink); border-radius:2px }
-  .menu-toggle span + span{ margin-top:5px }
-
-  /* Dropdown just under header */
-  #site-nav{
-    display:none !important;
-    position:absolute; left:12px; right:12px; top: calc(100% + 6px);
-    background:rgba(11,16,32,.98);
-    padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,.10);
-    box-shadow: 0 10px 28px rgba(0,0,0,.25); z-index:2500;
-  }
-  #site-nav.open{ display:block !important; }
-}
-@media (min-width:721px){ .menu-toggle{ display:none !important } }
-
-/* Phone/email neutral color */
-a[href^="mailto:"], a[href^="mailto:"]:visited,
-a[href^="tel:"],    a[href^="tel:"]:visited{
-  color: var(--ink) !important; text-decoration: none !important; font-weight:700;
-}
-a[href^="mailto:"]:hover, a[href^="tel:"]:hover{ text-decoration: underline !important }
-
-
-/* ===== ULTRAFIX: compact header & perfectly aligned hamburger ===== */
-body::before{ height:4px; background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.00) 100%); }
-@media (max-width:720px){
-  .site-header{ margin-top:0 !important; padding-top: env(safe-area-inset-top) !important; }
-  .site-header .container{
+  header.site-header{ padding-top: env(safe-area-inset-top) !important; }
+  header.site-header .container{
     display:flex !important; align-items:center !important; justify-content:space-between !important;
-    min-height:44px !important; position:relative !important; gap:8px !important;
+    height:40px !important; min-height:40px !important; padding:4px 12px !important; gap:10px !important;
   }
-  .menu-toggle{
-    position:static !important; top:auto !important; right:auto !important; left:auto !important;
-    transform:none !important;
-    display:flex !important; align-items:center !important; justify-content:center !important;
-    width:40px !important; height:40px !important; border-radius:10px !important;
-    background:transparent !important; border:0 !important; box-shadow:none !important;
-    margin-left:auto !important; z-index:3000 !important;
-  }
-  .menu-toggle span{ width:22px !important; height:3px !important; background:var(--ink) !important; border-radius:2px !important }
-  .menu-toggle span + span{ margin-top:5px !important }
-  #site-nav{
-    position:absolute !important; left:12px !important; right:12px !important;
-    top:calc(100% + 6px) !important;
-    display:none !important; background:rgba(11,16,32,.98) !important;
-    padding:12px !important; border-radius:12px !important; border:1px solid rgba(255,255,255,.10) !important;
-    box-shadow: 0 10px 28px rgba(0,0,0,.25) !important; z-index:2500 !important;
-  }
-  #site-nav.open{ display:block !important }
-}
-@media (min-width:721px){ .menu-toggle{ display:none !important } }
+  header.site-header .brand{ display:flex !important; align-items:center !important; gap:10px !important; }
+  header.site-header .brand *{ margin:0 !important; line-height:1.2 !important; }
 
-
-/* === HEADER 60% & HAMBURGER ALIGN — HARD OVERRIDE === */
-@media (max-width: 720px){
-  .site-header{ padding-top: env(safe-area-inset-top) !important; }
-  .site-header .container{
-    display:flex !important; align-items:center !important; justify-content:space-between !important;
-    min-height:40px !important; /* ~60% of the older tall header */
-    gap:8px !important;
-  }
-  .menu-toggle{
+  header.site-header .menu-toggle{
     position:static !important; transform:none !important;
     display:flex !important; align-items:center !important; justify-content:center !important;
-    width:38px !important; height:38px !important; /* compact tap area */
-    border:0 !important; background:transparent !important; box-shadow:none !important;
-    margin-left:auto !important;
+    width:40px !important; height:40px !important;
+    background:transparent !important; border:0 !important; box-shadow:none !important;
+    margin-left:auto !important; cursor:pointer !important;
   }
-  .menu-toggle span{ width:20px !important; height:3px !important; border-radius:2px !important; background:var(--ink) !important }
-  .menu-toggle span + span{ margin-top:4px !important }
+  header.site-header .menu-toggle span{
+    width:22px !important; height:3px !important; border-radius:2px !important; background:var(--ink) !important; display:block;
+  }
+  header.site-header .menu-toggle span + span{ margin-top:5px !important; }
 
-  /* dropdown directly below header */
+  /* Dropdown sits right below header */
   #site-nav{
-    position:absolute !important; left:12px !important; right:12px !important; top: calc(100% + 6px) !important;
-    display:none !important; background:rgba(11,16,32,.98) !important;
-    padding:12px !important; border-radius:12px !important; border:1px solid rgba(255,255,255,.10) !important;
-    box-shadow: 0 10px 24px rgba(0,0,0,.22) !important; z-index:2500 !important;
-  }
-  #site-nav.open{ display:block !important }
-}
-
-</style>
-
-
-<style id="v3-inline">
-/* --- Compact header + aligned hamburger (v3 hard override) --- */
-@media (max-width: 720px){
-  .site-header{ padding-top: env(safe-area-inset-top) !important; }
-  .site-header .container{
-    position: relative !important;
-    display:flex !important; align-items:center !important; justify-content:space-between !important;
-    min-height:40px !important; padding:4px 12px !important; gap:8px !important;
-    z-index: 4000 !important;
-  }
-  .brand{ display:flex; align-items:center; gap:10px; }
-  .menu-toggle{
-    position: static !important;
-    display:flex !important; align-items:center !important; justify-content:center !important;
-    width:40px !important; height:40px !important; border:0 !important;
-    background:transparent !important; box-shadow:none !important;
-    margin-left:auto !important; cursor:pointer !important; z-index:5000 !important;
-    -webkit-tap-highlight-color: transparent;
-    pointer-events: auto !important;
-  }
-  .menu-toggle span{ width:22px !important; height:3px !important; background:var(--ink) !important; border-radius:2px !important; display:block }
-  .menu-toggle span + span{ margin-top:5px }
-
-  /* Dropdown placed right below header; ensure on top of hero */
-  #site-nav{
-    position:absolute !important; left:12px !important; right:12px !important;
-    top: calc(100% + 6px) !important;
-    display:none !important;
-    background:rgba(11,16,32,.98) !important;
-    padding:12px !important; border-radius:12px !important;
-    border:1px solid rgba(255,255,255,.10) !important;
-    box-shadow: 0 10px 28px rgba(0,0,0,.25) !important;
-    z-index: 4500 !important;
-  }
-  #site-nav.open{ display:block !important; }
-  /* Prevent hero or other elements from intercepting taps */
-  .hero, .hero *{ pointer-events:auto; }
-}
-
-/* Neutral color for phone/email */
-a[href^="mailto:"], a[href^="mailto:"]:visited,
-a[href^="tel:"],    a[href^="tel:"]:visited{
-  color: var(--ink) !important; text-decoration: none !important; font-weight:700;
-}
-a[href^="mailto:"]:hover, a[href^="tel:"]:hover{ text-decoration: underline !important }
-</style>
-
-
-
-
-
-<style id="v4_1-inline">
-@media (max-width: 720px){
-  .site-header{ padding-top: env(safe-area-inset-top) !important; }
-  .site-header .container{
-    display:flex !important; align-items:center !important; justify-content:space-between !important;
-    min-height:44px !important; padding:6px 12px !important; gap:10px !important;
-  }
-  /* Keep brand vertically centered */
-  .brand{ display:flex !important; align-items:center !important; gap:10px !important; }
-  .brand h1{ margin:0 !important; line-height:1.2 !important; }
-  .brand .subtitle{ margin:0 !important; line-height:1.2 !important; }
-
-  /* Hamburger aligned with brand row */
-  .menu-toggle{
-    position:static !important; transform:none !important;
-    display:flex !important; align-items:center !important; justify-content:center !important;
-    width:40px !important; height:40px !important; border:0 !important; background:transparent !important;
-    margin-left:auto !important; z-index:3000 !important; cursor:pointer !important;
-  }
-  .menu-toggle span{ width:22px !important; height:3px !important; background:var(--ink) !important; border-radius:2px !important }
-  .menu-toggle span + span{ margin-top:5px !important }
-
-  /* Dropdown directly under header */
-  #site-nav{
-    position:absolute !important; left:12px !important; right:12px !important; top: calc(100% + 6px) !important;
-    display:none !important; background:rgba(11,16,32,.98) !important;
-    padding:12px !important; border-radius:12px !important; border:1px solid rgba(255,255,255,.10) !important;
-    box-shadow: 0 10px 28px rgba(0,0,0,.25) !important; z-index: 4500 !important;
+    position:absolute !important; left:12px !important; right:12px !important; top:calc(100% + 6px) !important;
+    display:none !important; background:rgba(11,16,32,.98) !important; padding:12px !important;
+    border-radius:12px !important; border:1px solid rgba(255,255,255,.10) !important; box-shadow:0 10px 28px rgba(0,0,0,.25) !important;
+    z-index:4500 !important;
   }
   #site-nav.open{ display:block !important; }
 }
@@ -523,6 +293,19 @@ a[href^="mailto:"]:hover, a[href^="tel:"]:hover{ text-decoration: underline !imp
     if(!nav.contains(e.target) && !toggle.contains(e.target)){ closeNav(); }
   });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeNav(); }});
+})();
+</script>
+
+
+<script id="v5-toggle">
+(function(){
+  const btn = document.querySelector('header.site-header .menu-toggle');
+  const nav = document.getElementById('site-nav');
+  if(!btn || !nav) return;
+  function set(open){ nav.classList.toggle('open', open); btn.setAttribute('aria-expanded', open?'true':'false'); }
+  btn.addEventListener('click', (e)=>{ e.preventDefault(); e.stopPropagation(); set(!nav.classList.contains('open')); }, {passive:false});
+  document.addEventListener('click', (e)=>{ if(!nav.contains(e.target) && !btn.contains(e.target)) set(false); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') set(false); });
 })();
 </script>
 
