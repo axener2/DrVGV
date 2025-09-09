@@ -339,12 +339,9 @@ body{line-height:1.7}
 
 
 /* --- Compact mode utilities --- */
-.toggle-wrap{margin-top:10px}
-.toggle-btn{
-  display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.18);
-  background:#0e1833; color:var(--ink); font-weight:800; text-decoration:none; cursor:pointer;
-}
-.toggle-btn:hover{color:var(--accent)}
+
+
+
 .collapsed{display:none}
 
 @media (max-width: 720px){
@@ -365,8 +362,8 @@ body{line-height:1.7}
   }
 
   /* Lighter 'Read more' link style */
-  .toggle-btn{background:transparent; border:0; padding:8px 0; color:var(--ink); opacity:.85}
-  .toggle-btn:hover{opacity:1; text-decoration:underline}
+  
+  
 
   /* Buttons smaller & simpler */
   .btn{padding:11px 14px; border-radius:12px; font-weight:800}
