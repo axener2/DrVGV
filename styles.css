@@ -336,3 +336,21 @@ body{line-height:1.7}
   .nav a{display:block; padding:10px 0; margin:0; border-top:1px solid rgba(255,255,255,.08)}
   .nav a:first-child{border-top:none}
 }
+
+
+/* --- Compact mode utilities --- */
+.toggle-wrap{margin-top:10px}
+.toggle-btn{
+  display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.18);
+  background:#0e1833; color:var(--ink); font-weight:800; text-decoration:none; cursor:pointer;
+}
+.toggle-btn:hover{color:var(--accent)}
+.collapsed{display:none}
+
+@media (max-width: 720px){
+  .compact-truncated{display:block; max-height:4.8em; overflow:hidden; position:relative}
+  .compact-truncated::after{
+    content:''; position:absolute; left:0; right:0; bottom:0; height:2.4em;
+    background:linear-gradient(180deg, rgba(11,16,32,0), rgba(11,16,32,1));
+  }
+}
