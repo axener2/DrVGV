@@ -26,3 +26,30 @@
     });
   }
 })();
+
+
+// ===== Mobile drawer toggle with backdrop =====
+(function(){
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('site-nav');
+  const backdrop = document.getElementById('nav-backdrop');
+  if (!toggle || !nav || !backdrop) return;
+
+  function openNav(){
+    nav.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+    backdrop.hidden = false;
+  }
+  function closeNav(){
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+    backdrop.hidden = true;
+  }
+  toggle.addEventListener('click', () => {
+    if (nav.classList.contains('open')) closeNav(); else openNav();
+  });
+  backdrop.addEventListener('click', closeNav);
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape') closeNav();
+  });
+})();

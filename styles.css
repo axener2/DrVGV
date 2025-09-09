@@ -510,3 +510,48 @@ a[href^="tel:"]:hover{ text-decoration: underline; }
   h2{ font-size:1.45rem; line-height:1.25; }
   h3{ font-size:1.20rem; line-height:1.3; }
 }
+
+
+/* ===== Mobile drawer nav (rock-solid) ===== */
+.site-header{position:relative; z-index:50}
+@media (max-width: 720px){
+  .menu-toggle{
+    display:flex; align-items:center; justify-content:center;
+    position:absolute; right:12px; top:10px;
+    width:64px; height:64px; border-radius:14px;
+    background:transparent !important; border:0 !important; box-shadow:none !important;
+    -webkit-tap-highlight-color: transparent; cursor:pointer; z-index:1002;
+  }
+  .menu-toggle span{display:block; width:30px; height:4px; background:var(--ink); border-radius:3px}
+  .menu-toggle span + span{margin-top:7px}
+
+  /* Slide-out drawer */
+  #site-nav{
+    position:fixed; top:0; right:-82%; width:82%; height:100vh;
+    background:rgba(11,16,32,.98); padding:20px 18px 24px;
+    border-left:1px solid rgba(255,255,255,.08);
+    box-shadow: -8px 0 28px rgba(0,0,0,.35);
+    display:flex; flex-direction:column; gap:14px;
+    transition:right .28s ease-out; z-index:1001;
+  }
+  #site-nav a{font-size:1.05rem; padding:10px 6px}
+  #site-nav.open{ right:0 }
+  /* Backdrop */
+  .backdrop{
+    position:fixed; inset:0; background:rgba(0,0,0,.35); backdrop-filter:saturate(140%) blur(1px);
+    z-index:1000;
+  }
+}
+@media (min-width: 721px){
+  .menu-toggle{display:none !important}
+  .backdrop{display:none !important}
+}
+
+/* ===== Contact links: standard neutral color ===== */
+a[href^="mailto:"], a[href^="mailto:"]:visited,
+a[href^="tel:"],    a[href^="tel:"]:visited{
+  color: var(--ink) !important;
+  text-decoration: none;
+  font-weight: 700;
+}
+a[href^="mailto:"]:hover, a[href^="tel:"]:hover{ text-decoration: underline }
