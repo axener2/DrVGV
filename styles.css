@@ -245,3 +245,66 @@ section{scroll-margin-top: 86px;}
   .nav{width:100%; justify-content:flex-start; gap:14px 18px; flex-wrap:wrap; overflow:visible; white-space:normal; padding-top:6px}
   .nav a{margin:0; display:inline-block}
 }
+
+
+/* --- Mobile-first navigation + spacing improvements --- */
+@media (max-width: 640px){
+  .container{width:min(100%, 92vw)}
+  .menu-toggle{
+    display:block; background:#0e1833; color:var(--ink); border:1px solid rgba(255,255,255,.18);
+    padding:8px 10px; border-radius:10px;
+  }
+  .nav{
+    display:none; width:100%; flex-direction:column; align-items:flex-start; gap:10px;
+    background:#0e1833; border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:10px; margin-top:10px
+  }
+  .nav.open{display:flex}
+  .nav a{margin:0}
+  .site-header .container{align-items:flex-start}
+  .brand h1{font-size:1.35rem}
+  .subtitle{font-size:.92rem}
+  .hero{padding:28px 0}
+  .hero .container{grid-template-columns:1fr; gap:14px}
+  .hero h2{font-size:1.6rem; line-height:1.25; letter-spacing:.1px}
+  .hero p{font-size:.98rem}
+  .cta{display:grid; grid-template-columns: 1fr; gap:10px}
+  .btn, .btn.secondary{width:100%; text-align:center}
+  .hero-card{padding:14px}
+  .hero-head{grid-template-columns:52px 1fr}
+  .avatar-img{width:52px; height:52px}
+  .section{padding:32px 0}
+  section{scroll-margin-top:88px}
+}
+
+
+/* Hamburger button */
+.menu-toggle{
+  display:none; background:transparent; border:0; width:42px; height:42px; border-radius:10px;
+  margin-right:8px;
+}
+.menu-toggle span{display:block; height:2px; margin:7px 6px; background:var(--ink); border-radius:2px}
+
+/* Better base typography spacing */
+body{line-height:1.7}
+.hero p{max-width:68ch}
+
+/* Mobile layout */
+@media (max-width: 720px){
+  .menu-toggle{display:block}
+  .nav{display:none; width:100%; padding:10px 0 0; gap:10px}
+  .nav a{display:block; margin:0; padding:10px 0; border-top:1px solid rgba(255,255,255,.08)}
+  .nav a:first-child{border-top:none}
+  .nav.open{display:block}
+  .brand h1{font-size:1.25rem}
+  .subtitle{font-size:.9rem}
+  .hero{padding:28px 0}
+  .hero h2{font-size:1.5rem}
+  .hero p{font-size:1rem}
+  .hero .container{grid-template-columns:1fr; gap:14px}
+  .cta{display:grid; grid-template-columns:1fr; gap:10px}
+  .btn{width:100%; text-align:center}
+  .item{padding:12px}
+  .section{padding:28px 0}
+  section{scroll-margin-top: 84px;}
+  [id]{scroll-margin-top: 84px;}
+}
