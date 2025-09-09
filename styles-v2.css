@@ -599,3 +599,33 @@ a[href^="tel:"],    a[href^="tel:"]:visited{
   color: var(--ink) !important; text-decoration: none !important; font-weight:700;
 }
 a[href^="mailto:"]:hover, a[href^="tel:"]:hover{ text-decoration: underline !important }
+
+
+/* ==== v8_6 fixes (mobile-first) ==== */
+@media (max-width: 720px){
+  header.site-header .subtitle{ display:none }
+  header.site-header { padding-bottom: 4px; }
+  .mobile-nav{ display:flex; gap:8px; padding:8px 14px 10px; overflow-x:auto; border-top:1px solid rgba(255,255,255,.08); }
+  .mobile-nav a{
+    font-size:12.5px; font-weight:600; padding:6px 10px; border-radius:10px;
+    border:1px solid rgba(255,255,255,.26); background:rgba(255,255,255,.04); color:#F4F7FF; text-decoration:none;
+  }
+  .mobile-nav a:active{ transform:translateY(1px) }
+  .nav{ display:none } /* hide desktop nav on mobile */
+}
+
+/* Gradient headings only for section h2s with class */
+h2.grad-heading{
+  background:linear-gradient(90deg, #6dd5fa, #2980b9);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; color:transparent;
+  font-weight:800;
+}
+
+/* Sticky header anchor offset */
+.anchor-spacer{ display:block; position:relative; top:-88px; height:0; visibility:hidden }
+
+/* Anchor offset for sticky header */
+section { scroll-margin-top: 96px; }
+@media (max-width: 720px){ section { scroll-margin-top: 84px; } }
+
+.mobile-nav{display:none}
