@@ -205,6 +205,35 @@ body::before{ height:4px; background: linear-gradient(180deg, rgba(255,255,255,0
 }
 @media (min-width:721px){ .menu-toggle{ display:none !important } }
 
+
+/* === HEADER 60% & HAMBURGER ALIGN — HARD OVERRIDE === */
+@media (max-width: 720px){
+  .site-header{ padding-top: env(safe-area-inset-top) !important; }
+  .site-header .container{
+    display:flex !important; align-items:center !important; justify-content:space-between !important;
+    min-height:40px !important; /* ~60% of the older tall header */
+    gap:8px !important;
+  }
+  .menu-toggle{
+    position:static !important; transform:none !important;
+    display:flex !important; align-items:center !important; justify-content:center !important;
+    width:38px !important; height:38px !important; /* compact tap area */
+    border:0 !important; background:transparent !important; box-shadow:none !important;
+    margin-left:auto !important;
+  }
+  .menu-toggle span{ width:20px !important; height:3px !important; border-radius:2px !important; background:var(--ink) !important }
+  .menu-toggle span + span{ margin-top:4px !important }
+
+  /* dropdown directly below header */
+  #site-nav{
+    position:absolute !important; left:12px !important; right:12px !important; top: calc(100% + 6px) !important;
+    display:none !important; background:rgba(11,16,32,.98) !important;
+    padding:12px !important; border-radius:12px !important; border:1px solid rgba(255,255,255,.10) !important;
+    box-shadow: 0 10px 24px rgba(0,0,0,.22) !important; z-index:2500 !important;
+  }
+  #site-nav.open{ display:block !important }
+}
+
 </style>
 
 </head>
