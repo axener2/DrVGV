@@ -136,6 +136,45 @@ body::before{
   .menu-toggle{ display:none !important; }
 }
 
+
+/* ===== Compact header + aligned hamburger (final) ===== */
+body::before{
+  content:""; display:block; height:6px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.00) 100%);
+}
+.site-header{ margin-top:0 !important; padding-top: env(safe-area-inset-top); }
+.site-header .container{ display:flex; align-items:center; justify-content:space-between; min-height:48px; position:relative; }
+
+@media (max-width:720px){
+  .menu-toggle{
+    display:flex !important; align-items:center; justify-content:center;
+    position: static !important; margin-left:auto;
+    width:40px; height:40px; border-radius:10px;
+    background:transparent !important; border:0 !important; box-shadow:none !important;
+    -webkit-tap-highlight-color: transparent; cursor:pointer; z-index:3000;
+  }
+  .menu-toggle span{ display:block; width:22px; height:3px; background:var(--ink); border-radius:2px }
+  .menu-toggle span + span{ margin-top:5px }
+
+  /* Dropdown just under header */
+  #site-nav{
+    display:none !important;
+    position:absolute; left:12px; right:12px; top: calc(100% + 6px);
+    background:rgba(11,16,32,.98);
+    padding:12px; border-radius:12px; border:1px solid rgba(255,255,255,.10);
+    box-shadow: 0 10px 28px rgba(0,0,0,.25); z-index:2500;
+  }
+  #site-nav.open{ display:block !important; }
+}
+@media (min-width:721px){ .menu-toggle{ display:none !important } }
+
+/* Phone/email neutral color */
+a[href^="mailto:"], a[href^="mailto:"]:visited,
+a[href^="tel:"],    a[href^="tel:"]:visited{
+  color: var(--ink) !important; text-decoration: none !important; font-weight:700;
+}
+a[href^="mailto:"]:hover, a[href^="tel:"]:hover{ text-decoration: underline !important }
+
 </style>
 
 </head>
