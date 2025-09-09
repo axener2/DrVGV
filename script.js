@@ -23,3 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+// Mobile menu toggle ensure default collapsed
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('site-nav');
+  if(toggle && nav){
+    nav.classList.remove('open'); // default collapsed
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', nav.classList.contains('open') ? 'true' : 'false');
+    });
+  }
+});
