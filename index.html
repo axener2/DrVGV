@@ -69,37 +69,25 @@
 
 
 
-<style id="v6-2-header-100">
-/* Phone: 100px header, centered text, header hamburger only */
+
+
+
+<style id="v7-mobile-centered-no-menu">
+/* Mobile rules */
 @media (max-width: 720px){
-  header.site-header{ position:relative !important; padding-top: env(safe-area-inset-top) !important; }
+  header.site-header{ padding-top: env(safe-area-inset-top) !important; }
   header.site-header .container{
-    display:flex !important; align-items:center !important; justify-content:space-between !important;
+    display:flex !important; align-items:center !important; justify-content:flex-start !important;
     height:100px !important; min-height:100px !important; padding:12px 16px !important; gap:14px !important;
   }
+  /* Brand: avatar + text block stacked neatly and centered vertically */
   header.site-header .brand{ display:flex !important; align-items:center !important; gap:12px !important; }
   header.site-header .brand h1{ margin:0 !important; line-height:1.1 !important; }
   header.site-header .brand .subtitle{ margin:2px 0 0 0 !important; line-height:1.25 !important; }
 
-  /* Force the correct hamburger (in header) and hide any card/hero hamburgers */
-  header.site-header .menu-toggle{
-    position:static !important; transform:none !important;
-    display:flex !important; align-items:center !important; justify-content:center !important;
-    width:48px !important; height:48px !important; background:transparent !important; border:0 !important;
-    margin-left:auto !important; cursor:pointer !important; z-index:4100 !important;
-  }
-  header.site-header .menu-toggle span{ width:24px !important; height:3px !important; border-radius:2px !important; background:var(--ink) !important; display:block }
-  header.site-header .menu-toggle span + span{ margin-top:6px !important; }
-  .hero .menu-toggle, .profile-card .menu-toggle{ display:none !important; }
-
-  /* Dropdown immediately below header */
-  #site-nav{
-    position:absolute !important; left:16px !important; right:16px !important; top: calc(100% + 8px) !important;
-    display:none !important; background:rgba(11,16,32,.98) !important; padding:14px !important;
-    border-radius:14px !important; border:1px solid rgba(255,255,255,.10) !important;
-    box-shadow:0 12px 30px rgba(0,0,0,.25) !important; z-index:3500 !important;
-  }
-  #site-nav.open{ display:block !important; }
+  /* Hide hamburger & dropdown on mobile */
+  .menu-toggle{ display:none !important; }
+  #site-nav{ display:none !important; }
 }
 </style>
 
@@ -114,7 +102,7 @@
         <p class="subtitle">Public Health Physician | Consultant (Medical), WHO – NTEP TSN</p>
       </div>
     </div>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    
     <nav id="site-nav" class="nav">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
@@ -125,7 +113,7 @@
     </nav>
   </div>
 
-<button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+
 </header>
 
 
@@ -324,17 +312,7 @@
 </script>
 
 
-<script id="v6-2-toggle">
-(function(){
-  var btn = document.querySelector('header.site-header .menu-toggle');
-  var nav = document.getElementById('site-nav');
-  if(!btn || !nav) return;
-  function set(open){ nav.classList.toggle('open', open); btn.setAttribute('aria-expanded', open?'true':'false'); }
-  btn.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); set(!nav.classList.contains('open')); }, {passive:false});
-  document.addEventListener('click', function(e){ if(!nav.contains(e.target) && !btn.contains(e.target)) set(false); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
-})();
-</script>
+
 
 </body>
 </html>
