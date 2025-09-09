@@ -78,33 +78,34 @@
 
 
 
-<style id="v8-mobile-header-links-compact">
-@media (max-width: 720px){
-  /* Keep 100px header */
-  header.site-header .container{
-    height:100px !important; min-height:100px !important;
-    padding:10px 14px !important; gap:10px !important;
-  }
-  header.site-header .brand{ gap:10px !important; }
-  header.site-header .brand .subtitle{ display:none !important; }
 
-  /* Compact, horizontally scrollable chips */
+
+
+<style id="v8-2-mobile-header-60">
+@media (max-width: 720px){
+  /* Smaller header bar */
+  header.site-header .container{
+    height:60px !important; min-height:60px !important;
+    padding:8px 12px !important; gap:10px !important;
+  }
+  /* Brand row: shrink avatar, keep name centered vertically */
+  header.site-header .brand{ display:flex !important; align-items:center !important; gap:10px !important; }
+  header.site-header .brand .avatar, header.site-header .brand .logo, header.site-header .brand .initial-badge{
+    width:40px !important; height:40px !important; min-width:40px !important; min-height:40px !important;
+    border-radius:10px !important; font-size:14px !important; line-height:40px !important; text-align:center;
+  }
+  header.site-header .brand h1{ margin:0 !important; line-height:1.1 !important; font-size:22px !important; }
+  header.site-header .brand .subtitle{ display:none !important; }
+  /* Compact chips row preserved, with tighter spacing */
   header.site-header .mobile-nav{
-    display:flex !important; gap:8px !important; padding:6px 12px !important;
-    overflow-x:auto; white-space:nowrap;
-    scrollbar-width:none; -ms-overflow-style:none;
+    display:flex !important; gap:8px !important; padding:6px 12px 8px 12px !important;
+    overflow-x:auto; white-space:nowrap; scrollbar-width:none; -ms-overflow-style:none;
+    background:linear-gradient(180deg, rgba(10,14,28,.45), rgba(10,14,28,0));
     border-top:1px solid rgba(255,255,255,.06);
-    background:linear-gradient(180deg, rgba(10,14,28,.5), rgba(10,14,28,0));
   }
   header.site-header .mobile-nav::-webkit-scrollbar{ display:none; }
-  header.site-header .mobile-nav a{
-    font-size:13px; line-height:1; padding:7px 10px;
-    border-radius:999px; background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.12); color:#CFE8FF; text-decoration:none;
-  }
-
-  /* Tighter space before hero */
-  .hero{ padding-top:8px !important; }
+  header.site-header .mobile-nav a{ font-size:13px !important; padding:6px 10px !important; border-radius:999px; }
+  .hero{ padding-top:6px !important; }
 }
 @media (min-width: 721px){
   header.site-header .mobile-nav{ display:none !important; }
