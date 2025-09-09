@@ -236,6 +236,54 @@ body::before{ height:4px; background: linear-gradient(180deg, rgba(255,255,255,0
 
 </style>
 
+
+<style id="v3-inline">
+/* --- Compact header + aligned hamburger (v3 hard override) --- */
+@media (max-width: 720px){
+  .site-header{ padding-top: env(safe-area-inset-top) !important; }
+  .site-header .container{
+    position: relative !important;
+    display:flex !important; align-items:center !important; justify-content:space-between !important;
+    min-height:40px !important; padding:4px 12px !important; gap:8px !important;
+    z-index: 4000 !important;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .menu-toggle{
+    position: static !important;
+    display:flex !important; align-items:center !important; justify-content:center !important;
+    width:40px !important; height:40px !important; border:0 !important;
+    background:transparent !important; box-shadow:none !important;
+    margin-left:auto !important; cursor:pointer !important; z-index:5000 !important;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: auto !important;
+  }
+  .menu-toggle span{ width:22px !important; height:3px !important; background:var(--ink) !important; border-radius:2px !important; display:block }
+  .menu-toggle span + span{ margin-top:5px }
+
+  /* Dropdown placed right below header; ensure on top of hero */
+  #site-nav{
+    position:absolute !important; left:12px !important; right:12px !important;
+    top: calc(100% + 6px) !important;
+    display:none !important;
+    background:rgba(11,16,32,.98) !important;
+    padding:12px !important; border-radius:12px !important;
+    border:1px solid rgba(255,255,255,.10) !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,.25) !important;
+    z-index: 4500 !important;
+  }
+  #site-nav.open{ display:block !important; }
+  /* Prevent hero or other elements from intercepting taps */
+  .hero, .hero *{ pointer-events:auto; }
+}
+
+/* Neutral color for phone/email */
+a[href^="mailto:"], a[href^="mailto:"]:visited,
+a[href^="tel:"],    a[href^="tel:"]:visited{
+  color: var(--ink) !important; text-decoration: none !important; font-weight:700;
+}
+a[href^="mailto:"]:hover, a[href^="tel:"]:hover{ text-decoration: underline !important }
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -422,6 +470,22 @@ body::before{ height:4px; background: linear-gradient(180deg, rgba(255,255,255,0
   const t=document.querySelector('.menu-toggle');
   const n=document.getElementById('site-nav');
   if(t&&n){ t.addEventListener('click',function(){ const o=n.classList.toggle('open'); this.setAttribute('aria-expanded', o?'true':'false'); }); }
+})();
+</script>
+
+
+<script>
+(function(){
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('site-nav');
+  if(!toggle || !nav) return;
+  function openNav(){ nav.classList.add('open'); toggle.setAttribute('aria-expanded','true'); }
+  function closeNav(){ nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+  toggle.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); nav.classList.toggle('open'); this.setAttribute('aria-expanded', nav.classList.contains('open') ? 'true' : 'false'); }, {passive:false});
+  document.addEventListener('click', function(e){
+    if(!nav.contains(e.target) && !toggle.contains(e.target)){ closeNav(); }
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeNav(); }});
 })();
 </script>
 
