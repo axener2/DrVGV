@@ -615,7 +615,11 @@ a[href^="mailto:"]:hover, a[href^="tel:"]:hover{ text-decoration: underline !imp
 }
 
 /* Gradient headings only for section h2s with class */
-
+h2.grad-heading{
+  background:linear-gradient(90deg, #6dd5fa, #2980b9);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; color:transparent;
+  font-weight:800;
+}
 
 /* Sticky header anchor offset */
 .anchor-spacer{ display:block; position:relative; top:-88px; height:0; visibility:hidden }
@@ -626,10 +630,11 @@ section { scroll-margin-top: 96px; }
 
 .mobile-nav{display:none}
 
-
-/* Match section headings to brand gradient */
-h2.grad-heading{
-  background: linear-gradient(90deg, #6dd5fa, #2980b9);
+/* Match section headings to the brand-name gradient — mobile & desktop */
+main section h2,
+.section h2,
+h2.grad-heading {
+  background: linear-gradient(90deg,#8CEBFF,#39B7D4);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -638,3 +643,9 @@ h2.grad-heading{
   letter-spacing: .2px;
 }
 
+/* Keep hero H1 intact (explicitly not gradient) */
+.hero h1 {
+  -webkit-text-fill-color: initial;
+  color: var(--text-strong, #e6edf3);
+  background: none;
+}
