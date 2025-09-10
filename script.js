@@ -53,3 +53,15 @@
     if (e.key === 'Escape') closeNav();
   });
 })();
+
+
+// Custom form handler: show friendly toast instead of demo text
+(function(){
+  var form = document.querySelector('form');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thanks for getting in touch');
+    try { form.reset(); } catch(_) {}
+  });
+})();
