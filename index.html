@@ -1,394 +1,73 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Dr. Vinod Kumar VG — Public Health Physician</title>
-<meta content="Portfolio of Dr. Vinod Kumar VG: WHO Consultant (Medical) — NTEP TSN, India." name="description"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
-<link href="styles-v2.css?v=1" rel="stylesheet"/>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Dr. Vinod Kumar VG",
-  "jobTitle": "Public Health Physician",
-  "telephone": "+91 99953 14858",
-  "email": "drvgv@yahoo.com",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "World Health Organization"
-  },
-  "alumniOf": [
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "SUT Medical College"
-    },
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "Global Institute of Public Health (KUHS)"
-    },
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "Manipal University"
-    },
-    {
-      "@type": "CollegeOrUniversity",
-      "name": "IIT Madras"
-    }
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "IN"
-  }
-}
-  </script>
-<style id="v8-3-white-pills-72px">
-/* Shared nav pill style (desktop + mobile) */
-.nav a, .nav-links a, header.site-header .mobile-nav a {
-  display:inline-block; text-decoration:none !important;
-  color:#F4F7FF !important;
-  border:1px solid rgba(255,255,255,.28) !important;
-  background:rgba(255,255,255,.05) !important;
-  padding:8px 12px; border-radius:10px;
-  line-height:1; font-size:14px;
-  transition:background .2s ease, border-color .2s ease, color .2s ease;
-}
-.nav a:hover, .nav-links a:hover, header.site-header .mobile-nav a:hover {
-  background:rgba(255,255,255,.10) !important;
-  border-color:rgba(255,255,255,.45) !important;
-  color:#FFFFFF !important;
-}
-.nav a:visited, .nav-links a:visited, header.site-header .mobile-nav a:visited { color:#F4F7FF !important; }
-
-/* Keep gradient header background (in case theme doesn't already include it) */
-header.site-header{
-  background: linear-gradient(180deg, rgba(13,17,23,0.95) 0%, rgba(13,17,23,0.86) 65%, rgba(13,17,23,0.00) 100%) !important;
-}
-
-/* Mobile adjustments */
-@media (max-width: 720px){
-  /* Header bar ~20% taller than 60px -> 72px */
-  header.site-header .container{
-    height:72px !important; min-height:72px !important;
-    padding:10px 14px !important; gap:10px !important;
-  }
-  /* Slightly larger avatar for balance */
-  header.site-header .brand .avatar, header.site-header .brand .logo, header.site-header .brand .initial-badge{
-    width:44px !important; height:44px !important; min-width:44px !important; min-height:44px !important;
-    border-radius:10px !important; line-height:44px !important; font-size:15px !important; text-align:center;
-  }
-  header.site-header .brand h1{ margin:0 !important; line-height:1.1 !important; font-size:22px !important; }
-  header.site-header .brand .subtitle{ display:none !important; }
-  /* Compact mobile pill row */
-  header.site-header .mobile-nav{
-    display:flex !important; gap:10px !important; padding:8px 14px 10px 14px !important;
-    overflow-x:auto; white-space:nowrap; scrollbar-width:none; -ms-overflow-style:none;
-    border-top:1px solid rgba(255,255,255,.06);
-    background:linear-gradient(180deg, rgba(10,14,28,.45), rgba(10,14,28,0));
-  }
-  header.site-header .mobile-nav::-webkit-scrollbar{ display:none; }
-  /* Tighten space before hero */
-  .hero{ padding-top:8px !important; }
-}
-
-/* Desktop: ensure classic top nav uses pill style too (if present) */
-@media (min-width: 721px){
-  #site-nav.nav, .top-nav, .nav-links{ display:flex; gap:10px; align-items:center; }
-}
-</style>
-<style id="v8-5-smaller-pills">
-/* Smaller pill nav style */
-.nav a, .nav-links a, header.site-header .mobile-nav a {
-  display:inline-block; text-decoration:none !important;
-  color:#F4F7FF !important;
-  border:1px solid rgba(255,255,255,.28) !important;
-  background:rgba(255,255,255,.05) !important;
-  padding:5px 10px; /* smaller padding */
-  border-radius:8px; /* slimmer corners */
-  line-height:1; font-size:13px; /* smaller font */
-  transition:background .2s ease, border-color .2s ease, color .2s ease;
-}
-.nav a:hover, .nav-links a:hover, header.site-header .mobile-nav a:hover {
-  background:rgba(255,255,255,.10) !important;
-  border-color:rgba(255,255,255,.45) !important;
-  color:#FFFFFF !important;
-}
-.nav a:visited, .nav-links a:visited, header.site-header .mobile-nav a:visited { color:#F4F7FF !important; }
-
-/* Ensure clickable + z-index fix */
-@media (max-width: 720px){
-  header.site-header{ position:relative; z-index:3000; }
-  header.site-header .mobile-nav{
-    position:relative; z-index:3050;
-    pointer-events:auto;
-    display:flex !important; gap:8px !important;
-    padding:6px 10px 8px 10px !important;
-    overflow-x:auto; white-space:nowrap; scrollbar-width:none; -ms-overflow-style:none;
-    border-top:1px solid rgba(255,255,255,.06);
-    background:linear-gradient(180deg, rgba(10,14,28,.45), rgba(10,14,28,0));
-  }
-  header.site-header .mobile-nav::-webkit-scrollbar{ display:none; }
-  /* Provide anchor offset to account for sticky header */
-  .anchor-spacer{ display:block; position:relative; top:-84px; height:0; visibility:hidden; }
-}
-html{ scroll-behavior:smooth; }
-</style>
-<style id="v8-6-gradient-headings">
-/* Apply gradient text effect to all section headings */
-section h2, .section-title, h2.section-heading {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 14px;
-  background: linear-gradient(90deg, #6dd5fa, #2980b9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-</style>
-<style>
-/* Light aqua gradient heading style applied to section titles */
-.section-title{
-  font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.01em;
-  background: linear-gradient(90deg, #e5fbff 0%, #baf2ff 45%, #6fdcff 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-@supports not (-webkit-background-clip: text){
-  .section-title{ color:#baf2ff; }
-}
-</style></head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Vinod Kumar VG — Portfolio</title>
+  <link rel="stylesheet" href="styles-v2.css" />
+</head>
 <body>
-<header class="site-header">
-<div class="container">
-<div class="brand">
-<div aria-hidden="true" class="avatar">VK</div>
-<div>
-<h1>Dr. Vinod Kumar VG</h1>
-<p class="subtitle">Public Health Physician | Consultant (Medical), WHO – NTEP TSN</p>
-</div>
-</div>
-<nav class="nav" id="site-nav">
-<a href="#about">About</a>
-<a href="#experience">Experience</a>
-<a href="#education">Education</a>
-<a href="#publications">Publications</a>
-<a href="#associations">Leadership</a>
-<a href="#contact">Contact</a>
-</nav>
-</div>
-<div class="mobile-nav">
-<a href="#about">About</a>
-<a href="#experience">Experience</a>
-<a href="#education">Education</a>
-<a href="#publications">Publications</a>
-<a href="#leadership">Leadership</a>
-<a href="#contact">Contact</a>
-</div>
-</header>
-<section class="hero">
-<div class="container">
-<div class="hero-text">
-<h2>Driving TB elimination with data, partnerships &amp; quality care.</h2>
-<p>A physician turned public health specialist with 8+ years' experience across operational research, monitoring &amp; evaluation, big data analysis, infectious diseases, field epidemiology, surveillance, prevalence surveys, grants, project management, and digital health—extensively focused on reducing the TB burden and mitigating drug resistance through WHO’s National TB Elimination Program (NTEP).</p>
-<div class="cta">
-<a class="btn" href="#contact">Get in touch</a>
-<a class="btn secondary" href="#publications">See publications</a>
-</div>
-</div>
-<div class="hero-card info-card">
-<div class="hero-head"><img alt="Dr. Vinod Kumar VG" class="avatar-img" src="assets/profile.jpg?v={% raw %}{{ site.github.build_revision | slice: 0,7 }}{% endraw %}"/><div><h4>Dr. Vinod Kumar VG</h4><p class="muted small">Public Health Physician · Consultant (Medical), WHO – NTEP TSN</p></div></div>
-<dl class="info-grid"><dt>Current</dt><dd><div><div><strong>Consultant (Medical) – NTEP TSN (Varanasi Division, UP)</strong></div><span class="sub org">World Health Organization</span></div></dd>
-<div class="row-sep"></div><dt>Location</dt><dd><strong>India</strong></dd><dt>Phone</dt><dd><a href="tel:+919995314858">+91 99953 14858</a></dd><dt>Email</dt><dd><a href="mailto:drvgv@yahoo.com">drvgv@yahoo.com</a></dd></dl>
-</div>
-</div>
-</section>
-<section class="section" id="about">
-<div class="container">
-<h3 class="section-title">About</h3>
-<p>A physician turned public health specialist with 8+ years' experience across operational research, monitoring &amp; evaluation, big data analysis, infectious diseases, field epidemiology, surveillance, prevalence surveys, grants, project management, and digital health—extensively focused on reducing the TB burden and mitigating drug resistance through WHO’s National TB Elimination Program (NTEP).</p>
-<p>Dr. Vinod Kumar VG is a physician turned public‑health professional who loves turning messy health data into actionable decisions. He works at the intersection of epidemiology, data analysis, and program operations—designing monitoring frameworks, building feedback loops, and translating insights for field teams and policy makers. He is especially passionate about TB elimination, drug‑resistance surveillance, and leveraging digital health platforms such as Nikshay. Current interests include pragmatic AI for public health (automated dashboards, anomaly detection, geospatial mapping, and natural‑language summaries), privacy‑first data pipelines, and impact evaluation for patient‑support interventions.</p>
-</div>
-</section>
-<section class="section" id="experience">
-<div class="container">
-<h3 class="section-title">Experience</h3>
-<div class="timeline">
-<div class="item current">
-<div class="when">Aug 2021 – Present</div>
-<div class="what">
-<h4>Consultant (Medical) – NTEP TSN (Varanasi Division, UP)</h4>
-<p class="org">World Health Organization</p>
-<ul><li>Automated M&amp;E activities for NTEP from sub‑national to TB unit levels.</li><li>Technical support for TB/DR‑TB surveillance, data analysis, feedback loops, and Nikshay rollout.</li><li>Planning, training, QA, advocacy &amp; policy support in close collaboration with CTD &amp; WHO.</li><li>Strengthened patient support systems integrating ICT platforms with Nikshay; improved access to U‑DST.</li><li>Led PPM engagement, Schedule H1 implementation, prescription audits, and private‑sector quality of care.</li></ul>
-</div>
-</div>
-<div class="item">
-<div class="when">Feb 2020 – Jul 2021</div>
-<div class="what">
-<h4>Scientist‑B &amp; State Lead, National TB Prevalence Survey (Bihar)</h4>
-<p class="org">ICMR–NIRT</p>
-<ul><li>Led TB prevalence survey operations; ensured linkage to care for newly identified cases.</li><li>State lead for COVID‑19 sero‑surveys in Kerala and Bihar.</li></ul>
-</div>
-</div>
-<div class="item">
-<div class="when">Nov 2015 – Jan 2020</div>
-<div class="what">
-<h4>Director</h4>
-<p class="org">Palliative Clinic (Cloud Health Care Initiatives)</p>
-<ul><li>Strategic direction, budgeting, quality delivery; partnerships with hospitals &amp; stakeholders; publications.</li></ul>
-</div>
-</div>
-<div class="item">
-<div class="when">Jul 2017 – Jan 2020</div>
-<div class="what">
-<h4>Medical Administrator &amp; Clinical Coordinator; RMO (Night)</h4>
-<p class="org">SUT Academy of Medical Sciences</p>
-<ul><li>Ops, staffing, budgeting, patient relations; digital charting; acute care and care coordination.</li></ul>
-</div>
-</div>
-<div class="item">
-<div class="when">Nov 2017 – Dec 2019</div>
-<div class="what">
-<h4>PG Trainee – Public Health</h4>
-<p class="org">Global Institute of Public Health</p>
-<ul><li>Epidemiology, policy, outbreak study; multiple research projects with focus on TB/AMR &amp; PPM.</li></ul>
-</div>
-</div>
-<div class="item">
-<div class="when">May 2017 – Jan 2020</div>
-<div class="what">
-<h4>General Practitioner</h4>
-<p class="org">General Practice</p>
-<ul><li>Primary care, counseling &amp; prevention; diagnostics &amp; first‑line management; inter‑specialty coordination.</li></ul>
-</div>
-</div>
-</div>
-</div>
+  <header class="site-header">
+    <h1 class="brand gradient-heading">Dr. Vinod Kumar VG</h1>
+    <p class="role">Public Health Physician | Consultant (Medical), WHO – NTEP TSN</p>
+  </header>
 
-</section>
-<section class="section alt" id="education">
-<div class="container">
-<h3 class="section-title">Education</h3>
-<div class="cards">
-<article class="card"><h4>MBBS</h4><p>SUT Medical College (University of Kerala)</p><p class="muted">2007–2013</p></article><article class="card"><h4>MPH (Public Health)</h4><p>Global Institute of Public Health (KUHS)</p><p class="muted">2017–2019</p></article><article class="card"><h4>MBA – Finance (In Progress)</h4><p>Manipal University</p><p class="muted">2021–Present</p></article><article class="card"><h4>BSc – Data Science (In Progress)</h4><p>IIT Madras</p><p class="muted">2022–Present</p></article>
-</div>
-</div>
-</section>
-<section class="section" id="publications">
-<div class="container">
-<h3 class="section-title">Publications</h3>
-<ol class="pubs">
-<li><strong>Tuberculosis and Diabetes in India: Stakeholder Perspectives on Health System Challenges and Opportunities for Integrated Care</strong><br/><span class="muted">Fazaludeen Koya S., et al. — Journal of Epidemiology and Global Health, 2022</span> · <span class="tag">PMCID: PMC8907360</span></li><li><strong>How Universal is the Use of Facemask During COVID‑19? A Photo‑Epidemiology Study from Kerala</strong><br/><span class="muted">Anand Marthanda P., et al. — BJSTR, 2021</span></li><li><strong>SARS‑CoV‑2 Sero‑prevalence among General Population &amp; HCWs in India (Dec 2020–Jan 2021)</strong><br/><span class="muted">Murhekar M.V., Selvaraju S., et al., including V.G. Vinod Kumar — National multicentric survey, 2021</span></li><li><strong>First Trimester Vaginal Bleeding &amp; Pregnancy Outcome; South Indian Trisomy‑21 Screening; Uterine Artery Doppler &amp; Preeclampsia/FGR</strong><br/><span class="muted">Simmi Salim, Dev Ravishankar, Vinod Kumar V.G., et al. — Int. J. Obstetrics &amp; Gynecology; MedPulse Int. J. Gynaecology, 2020–2021</span></li>
-</ol>
-<p class="muted small">Full list available on request.</p>
-<p>Dr. Vinod Kumar VG is a physician turned public‑health professional who loves turning messy health data into actionable decisions. He works at the intersection of epidemiology, data analysis, and program operations—designing monitoring frameworks, building feedback loops, and translating insights for field teams and policy makers. He is especially passionate about TB elimination, drug‑resistance surveillance, and leveraging digital health platforms such as Nikshay. Current interests include pragmatic AI for public health (automated dashboards, anomaly detection, geospatial mapping, and natural‑language summaries), privacy‑first data pipelines, and impact evaluation for patient‑support interventions.</p>
-</div>
-</section>
-<section class="section alt" id="associations">
-<div class="container">
-<h3>Leadership &amp; Association Roles</h3>
-<ul class="list">
-<li>National President, YDAI (2017)</li><li>Chairman, National Advisory Board, IMA‑Student’s Wing (2013)</li><li>National President, IMA‑Student’s Wing (2012)</li><li>National Coordinator, AIMA (2011)</li><li>Vice President, KMA (2010); Joint Secretary, KMA (2009)</li><li>University Councilor, University of Kerala (2009–2013)</li>
-</ul>
-</div>
-</section>
-<section class="section" id="contact">
-<div class="container">
-<h3 class="section-title">Contact</h3>
-<div class="contact-grid">
-<div>
-<p><strong>Email:</strong> <a href="mailto:drvgv@yahoo.com">drvgv@yahoo.com</a><br/>
-<strong>Phone:</strong> <a href="tel:+919995314858">+91 99953 14858</a><br/>
-<strong>Location:</strong> India</p>
-<p class="muted small">References available on request.</p>
-</div>
-<form class="contact-form" onsubmit="alert('Thanks for connecting — Regards — Dr. VGV'); return false;">
-<label>Name<input required="" type="text"/></label>
-<label>Email<input required="" type="email"/></label>
-<label>Message<textarea required="" rows="4"></textarea></label>
-<button class="btn" type="submit">Send Message</button>
-</form>
-</div>
-</div>
-</section>
-<footer class="site-footer">
-<div class="container">
-<p>© 2025 Dr. Vinod Kumar VG. Designed by Dr. Nitin.</p>
-</div>
-</footer>
-<script src="script.js?v={% raw %}{{ site.github.build_revision | slice: 0,7 }}{% endraw %}"></script>
-<div class="backdrop" hidden="" id="nav-backdrop"></div>
-<script>
-  (function(){
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.getElementById('site-nav');
-    if (toggle && nav){
-      toggle.addEventListener('click', function(){
-        const open = nav.classList.toggle('open');
-        this.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
-  })();
-</script>
-<script>
-(function(){
-  const t=document.querySelector('.menu-toggle');
-  const n=document.getElementById('site-nav');
-  if(t&&n){ t.addEventListener('click',function(){ const o=n.classList.toggle('open'); this.setAttribute('aria-expanded', o?'true':'false'); }); }
-})();
-</script>
-<script>
-(function(){
-  var toggle = document.querySelector('.menu-toggle');
-  var nav = document.getElementById('site-nav');
-  if(!toggle || !nav) return;
-  function openNav(){ nav.classList.add('open'); toggle.setAttribute('aria-expanded','true'); }
-  function closeNav(){ nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
-  toggle.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); nav.classList.toggle('open'); this.setAttribute('aria-expanded', nav.classList.contains('open') ? 'true' : 'false'); }, {passive:false});
-  document.addEventListener('click', function(e){
-    if(!nav.contains(e.target) && !toggle.contains(e.target)){ closeNav(); }
-  });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeNav(); }});
-})();
-</script>
-<script id="v5-toggle">
-(function(){
-  const btn = document.querySelector('header.site-header .menu-toggle');
-  const nav = document.getElementById('site-nav');
-  if(!btn || !nav) return;
-  function set(open){ nav.classList.toggle('open', open); btn.setAttribute('aria-expanded', open?'true':'false'); }
-  btn.addEventListener('click', (e)=>{ e.preventDefault(); e.stopPropagation(); set(!nav.classList.contains('open')); }, {passive:false});
-  document.addEventListener('click', (e)=>{ if(!nav.contains(e.target) && !btn.contains(e.target)) set(false); });
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') set(false); });
-})();
-</script>
-<script id="v8-4-scroll-fix">
-(function(){
-  function headerOffset(){ return 84; } // px
-  function scrollToId(id){
-    var el = document.getElementById(id);
-    if(!el){ return; }
-    var y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset();
-    window.scrollTo({top: y, behavior: 'smooth'});
-  }
-  document.addEventListener('click', function(e){
-    var a = e.target.closest('a[href^="#"]');
-    if(!a) return;
-    var id = a.getAttribute('href').slice(1);
-    if(!id) return;
-    var target = document.getElementById(id);
-    if(target){
-      e.preventDefault();
-      scrollToId(id);
-    }
-  }, {passive:false});
-})();
-</script>
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>Public health specialist with 8+ years' experience in TB elimination and digital health.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p>Consultant (Medical) — NTEP TSN, WHO, since 2021.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li>MBBS — SUT Medical College (University of Kerala)</li>
+        <li>MPH (Public Health) — KUHS</li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <ol>
+        <li>Tuberculosis and Diabetes in India (Journal of Epidemiology, 2022)</li>
+        <li>Universal Use of Facemask (BJSTR, 2021)</li>
+      </ol>
+    </section>
+
+    <section id="leadership">
+      <h2>Leadership & Association Roles</h2>
+      <ul>
+        <li>National President, YDAI (2017)</li>
+        <li>Chairman, National Advisory Board, IMA-Student’s Wing (2013)</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer gradient-heading">© 2025 Dr. Vinod Kumar VG. Designed by Dr. Nitin.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
