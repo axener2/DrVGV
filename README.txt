@@ -1,0 +1,1 @@
+Final fixed version with gradient headings, footer gradient, form alert+reset, header spacing fix.
