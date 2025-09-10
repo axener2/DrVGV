@@ -630,22 +630,36 @@ section { scroll-margin-top: 96px; }
 
 .mobile-nav{display:none}
 
-/* Match section headings to the brand-name gradient — mobile & desktop */
-main section h2,
-.section h2,
-h2.grad-heading {
-  background: linear-gradient(90deg,#8CEBFF,#39B7D4);
+
+/* === v10: Gradient headings for sections (match top name) === */
+:root{
+  --brand-grad: linear-gradient(90deg, #A6F3FF 0%, #7DE8F5 20%, #4DD9F0 55%, #2AC6E3 100%);
+}
+
+#about h2, #experience h2, #education h2, #publications h2, #leadership h2, #contact h2 {
+  background: var(--brand-grad);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   font-weight: 800;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
 }
 
-/* Keep hero H1 intact (explicitly not gradient) */
-.hero h1 {
+/* keep hero H1 solid */
+.hero h1 { 
   -webkit-text-fill-color: initial;
-  color: var(--text-strong, #e6edf3);
-  background: none;
+  color: var(--text-strong, #dbe7f3);
+  background: none !important;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+
+/* ensure pill links stay unchanged on desktop */
+@media (min-width: 769px) {
+  .pills, .pills a { 
+    background: initial;
+    -webkit-text-fill-color: initial;
+    color: inherit; 
+  }
 }
