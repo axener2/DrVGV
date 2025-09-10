@@ -53,3 +53,13 @@
     if (e.key === 'Escape') closeNav();
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  var form = document.getElementById('contact-form') || document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Thanks for getting in touch - Regards - Dr. VGV');
+    try { form.reset(); } catch(_) {}
+  });
+});

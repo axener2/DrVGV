@@ -1,3 +1,4 @@
+:root{--grad-start:#5fcfff;--grad-end:#0b6cae}
 
 :root{
   --bg:#f8fafc;
@@ -664,40 +665,22 @@ section { scroll-margin-top: 96px; }
   }
 }
 
-
-/* === Added by assistant: Unified darker gradient for major section headings & footer === */
-:root {
-  --grad-start: #79dbff; /* slightly darker than before */
-  --grad-end: #2ea5ff;
+/* === Unified gradient headings — slightly darker === */
+.section-title{
+  font-weight:800;
+  background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+  letter-spacing:.2px; line-height:1.15;
 }
 
-.grad-heading, 
-#about > .container > h3,
-#experience > .container > h3,
-#education > .container > h3,
-#publications > .container > h3,
-#leadership > .container > h3,
-#contact > .container > h3,
-.hero h1 {
-  background-image: linear-gradient(135deg, var(--grad-start), var(--grad-end));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
+/* In case some pages use plain heading tags without class in sections */
+section h2.section-title, section h3.section-title{}
 
-.site-footer .container p {
-  background-image: linear-gradient(135deg, var(--grad-start), var(--grad-end));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-/* Reduce pill buttons on mobile slightly (if present) */
-@media (max-width: 480px) {
-  .pill {
-    padding: 6px 10px;
-    font-size: 0.92rem;
-  }
+/* Footer gradient (matches headings) */
+.site-footer p, .footer-gradient{
+  background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+  font-weight:700;
 }
