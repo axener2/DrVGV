@@ -615,11 +615,7 @@ a[href^="mailto:"]:hover, a[href^="tel:"]:hover{ text-decoration: underline !imp
 }
 
 /* Gradient headings only for section h2s with class */
-h2.grad-heading{
-  background:linear-gradient(90deg, #6dd5fa, #2980b9);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; color:transparent;
-  font-weight:800;
-}
+
 
 /* Sticky header anchor offset */
 .anchor-spacer{ display:block; position:relative; top:-88px; height:0; visibility:hidden }
@@ -629,3 +625,16 @@ section { scroll-margin-top: 96px; }
 @media (max-width: 720px){ section { scroll-margin-top: 84px; } }
 
 .mobile-nav{display:none}
+
+
+/* Match section headings to brand gradient */
+h2.grad-heading{
+  background: linear-gradient(90deg, #6dd5fa, #2980b9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
