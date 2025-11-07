@@ -63,3 +63,29 @@ document.addEventListener('DOMContentLoaded', function(){
     try { form.reset(); } catch(_) {}
   });
 });
+
+// === Simple public visitor counter (Cloudflare Worker + KV) ===
+(function(){
+  function updateCounter(){
+    // 1) Increment on page load
+    try { fetch('/__hit', { method: 'POST', keepalive: true }); } catch(e){}
+    // 2) Fetch current total
+    try {
+      fetch('/__count', { cache: 'no-store' })
+        .then(r => r.json())
+        .then(d => {
+          var el = document.getElementById('visitCount');
+          if (el && d && typeof d.total !== 'undefined') {
+            try { el.textContent = (d.total).toLocaleString(); }
+            catch(_) { el.textContent = d.total; }
+          }
+        });
+    } catch(e){}
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCounter);
+  } else {
+    updateCounter();
+  }
+})();
+
